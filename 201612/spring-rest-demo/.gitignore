@@ -1,6 +1,5 @@
 .gradle
 /build/
-!gradle/wrapper/gradle-wrapper.jar
 
 ### STS ###
 .apt_generated
@@ -29,9 +28,6 @@ nbdist/
 
 # Ignore Gradle GUI config
 gradle-app.setting
-
-# Avoid ignoring Gradle wrapper jar file (.jar files are usually ignored)
-!gradle-wrapper.jar
 
 # Cache of project
 .gradletasknamecache
@@ -98,3 +94,4 @@ crashlytics.properties
 crashlytics-build.properties
 fabric.properties
 
+!gradle-wrapper.jar
