@@ -1,0 +1,25 @@
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+task wrapper(type: Wrapper) {
+    gradleVersion = '3.2.1'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile "io.rest-assured:rest-assured:3.0.1"
+    compile "io.rest-assured:json-path:3.0.1"
+    compile "com.fasterxml.jackson.core:jackson-databind:2.7.4"
+
+    testCompile "org.concordion:concordion:2.0.3"
+}
+
+test {
+    systemProperties['concordion.output.dir'] = "$reporting.baseDir/spec"
+    testLogging.showStandardStreams = true
+    outputs.upToDateWhen { false }
+}

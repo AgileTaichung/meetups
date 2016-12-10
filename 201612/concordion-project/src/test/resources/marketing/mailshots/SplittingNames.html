@@ -1,0 +1,56 @@
+<html xmlns:c="http://www.concordion.org/2007/concordion">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <link href="../../concordion.css" type="text/css"/>
+</head>
+<body>
+    <div c:example="splittingNames">
+        <h1>分隔姓名</h1>
+        <p>輸入英文全名後，會將姓與名分隔開來</p>
+        <h3>範例如下：</h3>
+
+        <table c:execute="#result = split(#fullName)">
+            <tr>
+                <th c:set="#fullName">輸入全名</th>
+                <th c:assert-equals="#result.firstName">輸出名字</th>
+                <th c:assert-equals="#result.lastName">輸出姓氏</th>
+            </tr>
+            <tr>
+                <td>Jane Smith</td>
+                <td>Jane</td>
+                <td>Smith</td>
+            </tr>
+            <tr>
+                <td>Michael Jordan</td>
+                <td>Michael</td>
+                <td>Jordan</td>
+            </tr>
+        </table>
+    </div>
+
+    <div c:example="getFirstName">
+        <h1>取得名字</h1>
+        <p>輸入英文全名後，會取得名字</p>
+        <h3>範例如下：</h3>
+
+        <table c:execute="#result = getFirstName(#fullName)">
+            <tr>
+                <th c:set="#fullName">輸入全名</th>
+                <th c:assert-equals="#result">輸出名字</th>
+            </tr>
+            <tr>
+                <td>Jane Smith</td>
+                <td>Jane</td>
+            </tr>
+            <tr>
+                <td>Michael Jordan</td>
+                <td>Michael</td>
+            </tr>
+            <tr>
+                <td>Sting</td>
+                <td>Sting</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
